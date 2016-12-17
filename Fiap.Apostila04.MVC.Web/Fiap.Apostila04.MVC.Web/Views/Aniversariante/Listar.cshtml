@@ -1,0 +1,26 @@
+﻿@model List<Fiap.Apostila04.MVC.Web.Models.Aniversariante>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Orçamento</th>
+        <th>Festa</th>
+        <th>Convidados</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Data</td>
+            <td>@item.Orcamento</td>
+            <td>@item.Festa</td>
+            <td>@item.Convidados</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,29 @@
+﻿@model Fiap.Apostila08.MVC.Web.Models.Pokemon
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Pokemon</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(c => c.PokemonId)
+    <div class="form-group">
+        @Html.LabelFor(c => c.Nome)
+        @Html.TextBoxFor(c => c.Nome, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Cp)
+        @Html.TextBoxFor(c => c.Cp, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Treinador)
+        @Html.DropDownListFor(c => c.TreinadorId ,
+            ViewBag.treinadores as SelectList,
+            new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Editar" class="btn btn-primary" />
+    </div>
+}
+

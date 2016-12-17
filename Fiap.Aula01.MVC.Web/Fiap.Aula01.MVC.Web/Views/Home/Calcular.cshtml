@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Calcular";
+}
+
+<h2>Calcular</h2>
+
+<form action="/Home/Calcular" method="post">
+    <div class="form-group">
+        <label for="nr1">Numero</label>
+        <input type="text" name="numero1" id="nr1" 
+               class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="nr2">Numero</label>
+        <input type="text" name="numero2" id="nr2"
+               class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Calcular"
+               class="btn btn-primary" />
+    </div>
+</form>
+
+<h1>Soma é: @ViewBag.resultado</h1>
+<h2>@TempData["msg"]</h2>
+

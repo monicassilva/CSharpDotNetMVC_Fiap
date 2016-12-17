@@ -1,0 +1,33 @@
+﻿@model Fiap.Apostila07.MVC.Web.Models.Pedido
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Pedido</h2>
+
+@if(TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Cliente)
+        @Html.TextBoxFor(c => c.Cliente, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.DataPedido)
+        @Html.TextBoxFor(c => c.DataPedido, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(c => c.Internet)
+        @Html.LabelFor(c => c.Internet)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+}
+

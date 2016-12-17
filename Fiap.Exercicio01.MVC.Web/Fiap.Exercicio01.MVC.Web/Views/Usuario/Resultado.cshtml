@@ -1,0 +1,11 @@
+﻿@model Fiap.Exercicio01.MVC.Web.Models.Usuario
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado</h2>
+
+@TempData["msg"]
+
+<h3>@Model.Nome, @Model.Idade anos.</h3>
+<p>@Model.Email</p>

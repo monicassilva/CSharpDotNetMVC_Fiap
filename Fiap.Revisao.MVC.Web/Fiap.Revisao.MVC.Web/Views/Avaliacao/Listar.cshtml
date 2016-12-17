@@ -1,0 +1,43 @@
+﻿@model List<Fiap.Revisao.MVC.Web.Models.Avaliacao>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Avaliações</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>Tema</th>
+        <th>Data</th>
+        <th>Sistema</th>
+        <th>Disciplina</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Tema</td>
+            <td>@item.Data</td>
+            <td>@(item.Sistema?"Sim":"Não")</td>
+            <td>@item.Disciplina.Nome</td>
+            <td>@item.Status</td>
+            <td>
+                @if (item.Status == Fiap.Revisao.MVC.Web.Models.Status.Pendente)
+                {
+                    @Html.ActionLink("Aprovar", "Aprovar",
+                        new { @id = item.AvaliacaoId },
+                        new { @class = "btn btn-success" })
+                }
+            </td>
+        </tr>
+    }
+</table>
+

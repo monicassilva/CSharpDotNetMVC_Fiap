@@ -1,0 +1,35 @@
+﻿@model Fiap.Apostila07.MVC.Web.Models.ItemPedido
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Adicionar Itens</h2>
+
+@TempData["msg"]
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Pedido)
+        @Html.DropDownListFor(i => i.Codigo,
+               ViewBag.opcoes as SelectList,
+               "Selecione",
+               new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Descricao)
+        @Html.TextBoxFor(i => i.Descricao, new { @class ="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Quantidade)
+        @Html.TextBoxFor(i => i.Quantidade, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Valor)
+        @Html.TextBoxFor(i => i.Valor, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+}
+

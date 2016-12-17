@@ -1,0 +1,41 @@
+﻿@model Fiap.Apostila04.MVC.Web.Models.Aniversariante
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@TempData["msg"]
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(abc => abc.Nome)
+        @Html.TextBoxFor(a => a.Nome, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(gabriel => gabriel.Data)
+        @Html.TextBoxFor(a => a.Data, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Convidados)
+        @Html.TextBoxFor(a => a.Convidados, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Orcamento)
+        @Html.TextBoxFor(a => a.Orcamento, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(c => c.Festa)
+        @Html.LabelFor(g => g.Festa)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Bolo)
+        @Html.DropDownListFor(c => c.Bolo, (SelectList) ViewBag.bolo , 
+                                         new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Severino.Botao("Cadastrar")
+    </div>
+}
+

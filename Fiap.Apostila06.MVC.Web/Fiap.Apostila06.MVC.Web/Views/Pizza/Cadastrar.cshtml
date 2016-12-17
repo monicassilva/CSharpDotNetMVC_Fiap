@@ -1,0 +1,33 @@
+﻿@model Fiap.Apostila06.MVC.Web.Models.Pizza
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@TempData["msg"]
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Nome)
+        @Html.TextBoxFor(c => c.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Valor)
+        @Html.TextBoxFor(c => c.Valor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Ingredientes)
+        @Html.TextAreaFor(c => c.Ingredientes, new { @class = "form-control" })
+    </div>
+    <div class="form-group">        
+        @Html.CheckBoxFor(c => c.BordaRecheada)
+        @Html.LabelFor(c => c.BordaRecheada)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+}
+
+
